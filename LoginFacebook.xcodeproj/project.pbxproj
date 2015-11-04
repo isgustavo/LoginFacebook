@@ -12,6 +12,10 @@
 		1511CA7E1BE79E2400DC97AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1511CA7C1BE79E2400DC97AD /* Main.storyboard */; };
 		1511CA801BE79E2400DC97AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1511CA7F1BE79E2400DC97AD /* Assets.xcassets */; };
 		1511CA831BE79E2400DC97AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1511CA811BE79E2400DC97AD /* LaunchScreen.storyboard */; };
+		1511CA8D1BE79E3900DC97AD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1511CA8A1BE79E3900DC97AD /* FBSDKCoreKit.framework */; };
+		1511CA8E1BE79E3900DC97AD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1511CA8B1BE79E3900DC97AD /* FBSDKLoginKit.framework */; };
+		1511CA8F1BE79E3900DC97AD /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1511CA8C1BE79E3900DC97AD /* FBSDKShareKit.framework */; };
+		1511CA911BE7A92C00DC97AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1511CA901BE7A92C00DC97AD /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		1511CA7F1BE79E2400DC97AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1511CA821BE79E2400DC97AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1511CA841BE79E2400DC97AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1511CA8A1BE79E3900DC97AD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		1511CA8B1BE79E3900DC97AD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		1511CA8C1BE79E3900DC97AD /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		1511CA901BE7A92C00DC97AD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1511CA8E1BE79E3900DC97AD /* FBSDKLoginKit.framework in Frameworks */,
+				1511CA8D1BE79E3900DC97AD /* FBSDKCoreKit.framework in Frameworks */,
+				1511CA8F1BE79E3900DC97AD /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +49,9 @@
 		1511CA6C1BE79E2400DC97AD = {
 			isa = PBXGroup;
 			children = (
+				1511CA8A1BE79E3900DC97AD /* FBSDKCoreKit.framework */,
+				1511CA8B1BE79E3900DC97AD /* FBSDKLoginKit.framework */,
+				1511CA8C1BE79E3900DC97AD /* FBSDKShareKit.framework */,
 				1511CA771BE79E2400DC97AD /* LoginFacebook */,
 				1511CA761BE79E2400DC97AD /* Products */,
 			);
@@ -60,6 +74,7 @@
 				1511CA7F1BE79E2400DC97AD /* Assets.xcassets */,
 				1511CA811BE79E2400DC97AD /* LaunchScreen.storyboard */,
 				1511CA841BE79E2400DC97AD /* Info.plist */,
+				1511CA901BE7A92C00DC97AD /* ProfileViewController.swift */,
 			);
 			path = LoginFacebook;
 			sourceTree = "<group>";
@@ -96,6 +111,7 @@
 				TargetAttributes = {
 					1511CA741BE79E2400DC97AD = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 4356GVBKS5;
 					};
 				};
 			};
@@ -135,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1511CA911BE7A92C00DC97AD /* ProfileViewController.swift in Sources */,
 				1511CA7B1BE79E2400DC97AD /* ViewController.swift in Sources */,
 				1511CA791BE79E2400DC97AD /* AppDelegate.swift in Sources */,
 			);
@@ -247,7 +264,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LoginFacebook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LoginFacebook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -258,7 +281,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LoginFacebook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LoginFacebook;
 				PRODUCT_NAME = "$(TARGET_NAME)";

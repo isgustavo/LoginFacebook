@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="LoginFacebook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,126 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOV-B7-4nh" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="40" y="285" width="520" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BAN-KS-Pkb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AOV-B7-4nh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tzn-3d-zgT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AOV-B7-4nh" secondAttribute="trailing" constant="20" id="U30-yq-672"/>
+                            <constraint firstItem="AOV-B7-4nh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="neI-ba-ZTm"/>
+                            <constraint firstItem="AOV-B7-4nh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rkO-0m-1EM"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dX1-Lg-zUj"/>
+                    <connections>
+                        <outlet property="mLoginButton" destination="AOV-B7-4nh" id="yk4-9B-LNH"/>
+                        <segue destination="UCr-wx-aOM" kind="show" identifier="logggedIn" id="PpF-p0-m1m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1370" y="409"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Y8C-Vo-INN">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="90i-0T-AIP" customClass="ProfileViewController" customModule="LoginFacebook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KF8-sE-8r7"/>
+                        <viewControllerLayoutGuide type="bottom" id="5N9-jh-oHG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jkt-Gb-Jkd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nrh-2b-jvW" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="40" y="550" width="520" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bTj-rp-5Jm"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlf-jR-Zgt">
+                                <rect key="frame" x="40" y="410" width="520" height="29"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Qa-jk-oYE">
+                                <rect key="frame" x="210" y="210" width="180" height="180"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="FKU-5R-pRc"/>
+                                    <constraint firstAttribute="height" constant="180" id="twR-Xa-PJh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeF-Lf-4b7">
+                                <rect key="frame" x="40" y="447" width="520" height="29"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nrh-2b-jvW" firstAttribute="leading" secondItem="Jkt-Gb-Jkd" secondAttribute="leadingMargin" constant="20" id="7gc-TB-C64"/>
+                            <constraint firstItem="0Qa-jk-oYE" firstAttribute="centerX" secondItem="Jkt-Gb-Jkd" secondAttribute="centerX" id="8iV-Z6-pgV"/>
+                            <constraint firstItem="qeF-Lf-4b7" firstAttribute="top" secondItem="Mlf-jR-Zgt" secondAttribute="bottom" constant="10" id="BPg-UV-k8U"/>
+                            <constraint firstItem="0Qa-jk-oYE" firstAttribute="centerY" secondItem="Jkt-Gb-Jkd" secondAttribute="centerY" id="RdM-xa-UWf"/>
+                            <constraint firstItem="Mlf-jR-Zgt" firstAttribute="leading" secondItem="Jkt-Gb-Jkd" secondAttribute="leadingMargin" constant="20" id="X0N-g0-taE"/>
+                            <constraint firstItem="qeF-Lf-4b7" firstAttribute="centerX" secondItem="Jkt-Gb-Jkd" secondAttribute="centerX" id="X37-2U-STg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nrh-2b-jvW" secondAttribute="trailing" constant="20" id="c0p-8e-8N1"/>
+                            <constraint firstItem="5N9-jh-oHG" firstAttribute="top" secondItem="Nrh-2b-jvW" secondAttribute="bottom" constant="20" id="dix-aQ-o62"/>
+                            <constraint firstItem="Mlf-jR-Zgt" firstAttribute="centerX" secondItem="Jkt-Gb-Jkd" secondAttribute="centerX" id="ktl-la-a5s"/>
+                            <constraint firstItem="Nrh-2b-jvW" firstAttribute="centerX" secondItem="Jkt-Gb-Jkd" secondAttribute="centerX" id="uWI-N3-K29"/>
+                            <constraint firstItem="Mlf-jR-Zgt" firstAttribute="top" secondItem="0Qa-jk-oYE" secondAttribute="bottom" constant="20" id="wwg-kf-5WV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mlf-jR-Zgt" secondAttribute="trailing" constant="20" id="xF9-ty-2ja"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wwf-9f-DlM"/>
+                    <connections>
+                        <outlet property="mEmailLabel" destination="qeF-Lf-4b7" id="EXU-bh-a0D"/>
+                        <outlet property="mFacebookButton" destination="Nrh-2b-jvW" id="fro-mR-h0v"/>
+                        <outlet property="mNameLabel" destination="Mlf-jR-Zgt" id="7Vv-Tk-U3z"/>
+                        <outlet property="mProfileImageView" destination="0Qa-jk-oYE" id="zRS-qo-ngj"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="logggedOut" id="Von-Jt-Xgy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lvP-uN-bBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3055" y="409"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GFc-mK-Qzq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UCr-wx-aOM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X2y-Pb-eYz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="90i-0T-AIP" kind="relationship" relationship="rootViewController" id="Nga-OM-Phn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDQ-tP-OiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2347" y="1177"/>
         </scene>
     </scenes>
 </document>
